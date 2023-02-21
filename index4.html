@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>World's Best Name Generation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button onclick='ad()'>ADD USER INFO</button>
+        <div id='usernames'></div>
+        <script>
+            usernameContainer = document.querySelector('#usernames');
+            var NothingPart = ['Xtreme','Amazing','Nice','Good','AestheticallyPleasing','NonTacky'];
+            var FirstPart = ['Plastic', 'SpaceExplorer', 'Leather', 'Space', 'Rubber', 'CottonFree','CottonLess','NonFakePlastic', 'NonFakeLeather', 'NonFakeSpace', 'NonFakeRubber', 'SincerelyCottonFree'];
+            var FirstPartSimpl = ['Plastic', 'SpaceExplorer', 'Leather', 'Space', 'Rubber', 'CottonFree','NonFakePlastic', 'NonFakeLeather', 'NonFakeSpace', 'NonFakeRubber', 'SincerelyCottonFree'];
+            var SecondPart = ['Suit', 'Dress', 'Pants', 'Skirt', 'Shirt', 'ShirtConnectedToPants', 'Pumpkin', 'Clothing'];
+            var SecondPartPlural = ['Suits', 'Dresses', 'Pants', 'Skirts', 'Shirts', 'ShirtConnectedToPants', 'Pumpkins', 'ClothingPieces'];
+            var ThirdPart = ['Dulim','Umboose','Minobbiane','Unhun','Dubleu','Nullem','Defat','Glistl','Nogdu','Danbelious','Striker','Persia','Neverin','Emmy','Sanier','Corse','Simslear','Cettmyann','Harboard','Lu','Nevri','Morson','Orqai','Carnisious','Doaoni'];
+            var FourthPart = ['Du','Nookwanfei','Rabitana','Duck','Rebellious','Theatrr','Theseri'];
+            var CODEONE = ['Correct','Incorrect','True','False','Visible','Invisible','Existing','NonExisting'];
+            var CODETWO = ['Duck','Hippo','Horse','Elephant','Swan','Goose','Koose'];
+            var CODEFOUR = ['Train','Bus','PublicTransport','Cycle','Bicycle','Staple'];
+            var FifthPart = ['Like','Admire','Buy','Celebrate','Purchase','Enjoy','Appreciate'];
+            var SixthPart = ['Extremely','Xtremely','Sincerely','Truly','Gladly','Enthusiastically','InRealLife'];
+            function ind(ar) {
+                var mx = ar.length;
+                return ar[Math.floor(Math.random() * mx)];
+            }
+            function month() {
+                mt = (Math.floor(Math.random() * 12)).toString();
+                if (mt === '0') {
+                    return '01';
+                } else if (mt.length === 1) {
+                    return '0' + mt;
+                } else {
+                    return mt;
+                }
+            }
+            function year() {
+                dt = (Math.floor(Math.random() * 29)).toString();
+                if (dt === '0') {
+                    return '01';
+                } else if (dt.length === 1) {
+                    return '0' + dt;
+                } else {
+                    return dt;
+                }
+            }
+            function untype() {
+                value = Math.floor(Math.random() * 100);
+                if (value > 75) {
+                    return `The${ind(FirstPartSimpl)}sAre${ind(NothingPart)}${ind(SecondPartPlural)}`;
+                } else {
+                    return `I${ind(FifthPart)}My${ind(FirstPart) + ind(SecondPart) + ind(SixthPart)}`;
+                }
+            }
+            function ad() {
+                usernameContainer.innerHTML += `<code>{<br>
+  "userForename": "${ind(ThirdPart)}",<br>
+  "userSurname": "${ind(FourthPart)}",<br>
+  "userUsername": "${ind(NothingPart) + ind(FirstPart) + ind(SecondPart)}",<br>
+  "userCode": "${ind(CODEONE) + ind(CODETWO) + ind(FirstPart) + ind(SecondPart) + ind(CODEFOUR)}",<br>
+  "userEmail": "${untype()}@${ind(FirstPart).toLowerCase()}.${ind(SecondPart).toLowerCase()}",<br>
+  "userCelebrate": "1970-${month()}-${year()}T00:00:00.000Z"<br>
+}</code>`;
+            }
+        </script>
+    </body>
+</html>
