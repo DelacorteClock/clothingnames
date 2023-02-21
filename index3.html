@@ -13,10 +13,10 @@
             var SecondPart = ['Suit', 'Dress', 'Pants', 'Skirt', 'Shirt', 'Pumpkin'];
             function ind(ar) {
                 var mx = ar.length;
-                return Math.floor(Math.random() * mx);
+                return ar[Math.floor(Math.random() * mx)];
             }
             function ad() {
-                usernameContainer.innerHTML += `<p>${FirstPart[ind(FirstPart)] + SecondPart[ind(SecondPart)]}</p>`;
+                usernameContainer.innerHTML += `<p>${ind(FirstPart) + ind(SecondPart)}</p>`;
             }
         </script>
     </body>
