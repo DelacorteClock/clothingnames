@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>World's Best Name Generation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button onclick='ad()'>ADD NAME</button>
+        <div id='usernames'></div>
+        <script>
+            usernameContainer = document.querySelector('#usernames');
+            var FirstPart = ['Plastic', 'Sick', 'Therapy', 'SpaceExplorer', 'Leather', 'Space', 'Rubber', 'Toxic', 'AngryStudent', 'Grey'];
+            var SecondPart = ['Suit', 'Dress', 'Pants', 'Skirt', 'Shirt', 'Pumpkin'];
+            function ind(ar) {
+                var mx = ar.length;
+                return Math.floor(Math.random() * mx);
+            }
+            function ad() {
+                usernameContainer.innerHTML += `<p>${FirstPart[ind(FirstPart)] + SecondPart[ind(SecondPart)]}</p>`;
+            }
+        </script>
+    </body>
+</html>
