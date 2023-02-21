@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>World's Best Name Generation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id='usernames'></div>
+        <script>
+            usernameContainer = document.querySelector('#usernames');
+            var FirstPart = ['Plastic', 'Sick', 'Therapy', 'SpaceExplorer', 'Leather', 'Space', 'Rubber', 'Toxic', 'AngryStudent', 'Grey'];
+            var SecondPart = ['Suit','Dress','Pants','Skirt', 'Shirt', 'Pumpkin'];
+            usernameContainer.innerHTML += `<h1>Clothing Names</h1>`;
+            FirstPart.forEach(function (wordOne) {
+                SecondPart.forEach(function (wordTwo) {
+                    usernameContainer.innerHTML += `<p>${wordOne}${wordTwo}</p>`;
+                });
+            });
+            usernameContainer.innerHTML += `<h1>Pants' Names</h1>`;
+            FirstPart.forEach(function (word) {
+                usernameContainer.innerHTML += `<p>The ${word}s</p>`;
+            });
+            usernameContainer.innerHTML += `<h1>Pants' Names (Codes)</h1>`;
+            FirstPart.forEach(function (word) {
+                usernameContainer.innerHTML += `<p>The${word}s</p>`;
+            });
+        </script>
+    </body>
+</html>
