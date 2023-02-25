@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>World's Best Name Generation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id='usernames'></div>
+        <script>
+            usernameContainer = document.querySelector('#usernames');
+            var NothingPart = ['Xtreme','Amazing','Nice','Good','Aesthetically Pleasing','Not Tacky', 'Marvellous', 'Admirable'];
+            var FirstPart = ['Plastic', 'Space Explorer', 'Leather', 'Space', 'Rubber', 'Cotton Free'];
+            var FirstPartSimpl = ['Plastic', 'Space Explorer', 'Leather', 'Space', 'Rubber'];
+            var SecondPart = ['Suit', 'Dress', 'Pants', 'Skirt', 'Shirt', 'Shirt Connected To Pants', 'Pumpkin', 'Clothing'];
+            var SecondPartPlural = ['Suits', 'Dresses', 'Pants', 'Skirts', 'Shirts', 'Shirts Connected To Pants', 'Pumpkins', 'Clothing Pieces', 'Skyscrapers'];
+            var ThirdPart = ['Dulim','Umboose','Minobbiane','Unhun','Dubleu','Nullem','Defat','Glistl','Nogdu','Danbelious','Striker','Persia','Neverin','Emmy','Sanier','Corse','Simslear','Cettmyann','Harboard','Lu','Nevri','Morson','Orqai','Carnisious','Doaoni'];
+            var FourthPart = ['Du','Nookwanfei','Rabitana','Duck','Rebellious','Theatrr','Theseri'];
+            var CODEONE = ['Correct','Incorrect','True','False','Visible','Invisible','Existing','NonExisting'];
+            var CODETWO = ['Duck','Hippo','Horse','Swan','Goose'];
+            var CODEFOUR = ['Train','Bus','PublicTransport','Cycle','Bicycle','Staple'];
+            var FifthPart = ['Like','Admire','Buy','Celebrate','Purchase','Enjoy','Appreciate'];
+            var SixthPart = ['Extremely','Xtremely','Sincerely','Truly','Gladly','Enthusiastically','In Real Life','Excessively', 'In Actuality'];
+            var SeventhPart = ['Pleasant','Enjoyable'];
+            function ind(ar) {
+                var mx = ar.length;
+                return ar[Math.floor(Math.random() * mx)];
+            }
+            function month() {
+                mt = (Math.floor(Math.random() * 12)).toString();
+                if (mt === '0') {
+                    return '01';
+                } else if (mt.length === 1) {
+                    return '0' + mt;
+                } else {
+                    return mt;
+                }
+            }
+            function year() {
+                dt = (Math.floor(Math.random() * 29)).toString();
+                if (dt === '0') {
+                    return '01';
+                } else if (dt.length === 1) {
+                    return '0' + dt;
+                } else {
+                    return dt;
+                }
+            }
+            function untype() {
+                value = Math.floor(Math.random() * 100);
+                if (value > 80) {
+                    return ' The' + (` ${ind(FirstPartSimpl)}s are ${ind(NothingPart)} ${ind(SecondPartPlural)}. `).toLowerCase();
+                } else if (value > 10) {
+                    return ' I' + (` ${ind(FifthPart)} my ${ind(FirstPart)} ${ind(SecondPart)} ${ind(SixthPart)}. `).toLowerCase();
+                } else {
+                    return ` This is a very ${ind(SeventhPart).toLowerCase()} day. Is it not? `;
+                }
+            }
+            function ad() {
+                usernameContainer.innerText += `${untype()}`;
+            }
+            function adl() {
+                var dubleu = 0;
+                do {
+                    ad();
+                    dubleu++;
+                } while (dubleu < 200)
+            }
+            adl();
+        </script>
+    </body>
+</html>
