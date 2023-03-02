@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>World's Best Name Generation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id='usernames'></div>
+        <script>
+            usernameContainer = document.querySelector('#usernames');
+            var NothingPart = ['Extreme','Amazing','Nice','Good','Aesthetically Pleasing','Not Tacky', 'Marvellous', 'Admirable', 'Metalic', 'Non Porous', 'Unique','Modern','Contemporary'];
+            var FirstPart = ['Plastic','Plastic','Space Explorer','Leather','Leather','Leather','Space','Rubber','Rubber','Rubber'];
+            var FirstPartSimpl = ['Plastic','Plastic','Space Explorer','Leather','Leather','Leather','Space','Rubber','Rubber','Rubber'];
+            var SecondPart = ['Suit', 'Dress', 'Pants', 'Skirt', 'Shirt', 'Shirt Connected To Pants', 'Pumpkin', 'Clothing'];
+            var SecondPartPlural = ['Suits', 'Dresses', 'Pants', 'Skirts', 'Shirts', 'Shirts Connected To Pants', 'Pumpkins', 'Clothing Pieces'];
+            var ThirdPart = ['Dulim','Umboose','Minobbiane','Unhun','Nullem','Defat','Glistl','Nogdu','Danbelious','Neverin','Emmy','Sanier','Corse','Simslear','Cettmyann','Harboard','Nevri','Orqai','Carnisious','Doaoni'];
+            var FourthPart = ['Du','Nookwanfei','Rabitana','Duck','Rebellious','Theatrr','Theseri'];
+            var CODEONE = ['Correct','Incorrect','True','False','Visible','Invisible','Existing','NonExisting'];
+            var CODETWO = ['Duck','Hippo','Horse','Swan','Goose'];
+            var CODEFOUR = ['Train','Bus','PublicTransport','Cycle','Bicycle','Staple'];
+            var FifthPart = ['Like','Admire','Buy','Celebrate','Purchase','Enjoy','Appreciate'];
+            var SixthPart = ['Extremely','Xtremely','Sincerely','Truly','Gladly','Enthusiastically','In Real Life','Excessively', 'In Actuality'];
+            var SeventhPart = ['Pleasant','Enjoyable'];
+            var EighthPart = ['Looks','Is'];
+            var NinthPart = ['Possesses','Possesses','Possesses','Possesses','Bought'];
+            function ind(ar) {
+                var mx = ar.length;
+                return ar[Math.floor(Math.random() * mx)];
+            }
+            function untype() {
+                value = Math.floor(Math.random() * 100);
+                if (value > 120) {
+                    return ' The' + (` ${ind(FirstPartSimpl)}s are ${ind(NothingPart)} ${ind(SecondPartPlural)}. `).toLowerCase();
+                } else if (value > 110) {
+                    return ' I' + (` ${ind(FifthPart)} my ${ind(FirstPart)} ${ind(SecondPart)} ${ind(SixthPart)}. `).toLowerCase();
+                } else if (value > 5) {
+                    return ` ${ind(ThirdPart)} ${ind(FourthPart)} ${ind(NinthPart).toLowerCase()} a ${ind(FirstPart).toLowerCase()} ${ind(SecondPart).toLowerCase()}. It ${ind(EighthPart).toLowerCase()} so ${ind(NothingPart).toLowerCase()}. `;
+                } else {
+                    return ` This is a very ${ind(SeventhPart).toLowerCase()} day. Is it not? `;
+                }
+            }
+            function ad() {
+                usernameContainer.innerText += `${untype()}`;
+            }
+            function adl() {
+                var dubleu = 0;
+                do {
+                    ad();
+                    dubleu++;
+                } while (dubleu < 200)
+            }
+            adl();
+        </script>
+    </body>
+</html>
